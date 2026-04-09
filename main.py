@@ -67,15 +67,3 @@ biz   = business_metrics(rings, ps_sample)
 print("\n" + "=" * 55)
 print("  PIPELINE COMPLETE")
 print("=" * 55)
-print(f"""
-  Credit card model : {best_cc['model']}   AUC={best_cc['roc_auc']}
-  Graph model       : {best_gr['model']}   AUC={best_gr['roc_auc']}
-  Fraud rings found : {len(rings)}
-  Fraud exposure    : ${biz['total_fraud_exposure_usd']:,.2f}
-  Ring detection %  : {biz['ring_detection_rate_pct']}%
-
-  Next steps:
-    → Open dashboard:  open dashboard/index.html
-    → Start API:       uvicorn src.api:app --reload --port 8000
-    → API docs:        http://localhost:8000/docs
-""")
